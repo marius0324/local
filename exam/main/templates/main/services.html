@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Услуги{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <h2>Наши услуги</h2>
+    {% if products %}
+    <p>Мы предлагаем различные услуги, включая:</p>
+            {% for product in products %}
+                <b>Название товара:</b> {{product.name}} <br>
+                <b>Описание товара:</b> {{product.description}} <br>
+                <b>Фото товара: </b> <img src="{{product.image.url}}" width="400px" height="400px">
+            {% endfor %}
+        {% else %}
+        <h2>Услуги отсутствуют!</h2>
+    {% endif %}
+</div>
+{% endblock %}

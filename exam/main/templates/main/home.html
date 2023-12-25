@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Добро пожаловать на наш сайт!</h1>
+  <p>Здесь вы найдете информацию о наших товарах и услугах.</p>
+
+  {% for service in services %}
+    <div>
+      <h2>{{ service.name }}</h2>
+      <p>{{ service.description }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}
